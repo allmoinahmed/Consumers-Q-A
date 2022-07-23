@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Rubik, sans-serif;
+}
+
+section#right-side {
+    width: 27.50%;
+    float: left;
+    background: #3A68F5;
+    padding-right: 44px;
+    margin: 0;
+    position: relative;
+    height: 100vh;
+}
+
+section#left-side {
+    width: 72.50%;
+    float: left;
+}
+.cqa-panel {
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-left: 1px dashed rgb(0, 0, 0);
+    padding: 40px 17px;
+    transition: all 700ms ease-in-out 0s;
+    background: #F1F7FF;
+    overflow: hidden;
+    width: 100%;
+    float: left;
+    display: none;
+}
+.cqa-panel #title {
+    position: relative;
+    left: 20px;
+    bottom: 20px;
+    margin: 0px;
+    opacity: 0;
+    height: 90px;
+    /* width: 362px; */
+    color: rgb(15, 48, 89);
+    font-family: Rubik;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 90px;
+    text-align: right;
+}
+.cqa-panel.active #title {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out 0.8s;
+}
+.cqa-panel #panel-next h5 {
+    font-size: 20px;
+    line-height: 36px;
+    color: #0F3059;
+    display: block;
+    width: 100%;
+    float: right;
+    margin-bottom: 0;
+}
+
+.cqa-panel #panel-next h4 {
+    font-size: 28px;
+    line-height: 36px;
+    color: #3A68F5;
+    display: block;
+    width: 100%;
+    float: right;
+    text-align: center;
+    margin: 0 0 26px 0;
+    height: 62px;
+}
+.cqa-panel #panel-next {
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    width: 100%;
+    top: 0;
+    flex-flow: column;
+    text-align: center;
+    padding: 0 37px;
+}
+.cqa-panel #panel-next img {
+    height: 36px;
+    width: 32px;
+    /* transform: scaleX(-1); */
+    background-color: #F97991;
+    padding: 10px;
+    border-radius: 100%;
+}
+.cqa-panel #accordion-box {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.4s ease 0s, opacity 0.4s linear 0;
+    overflow-y: scroll;
+    height: inherit;
+    padding:0 45px 0 46px
+;
+    height: 100vh;
+}
+#accordion-box::-webkit-scrollbar {
+    width: 8px;
+    height: 8px !important;
+    background:-webkit-linear-gradient(0, blue 50%, white 100%);        
+
+}
+  #accordion-box::-webkit-scrollbar-track {
+    background: #fff;        /* color of the tracking area */
+    height: 50px; 
+    
+  }
+  #accordion-box::-webkit-scrollbar-thumb {
+    background-color: #6F839B;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 0px solid transparent;  /* creates padding around scroll thumb */
+    height: 50px;       
+  }
+  #accordion-box::-webkit-resizer {
+    height: 12px;
+  }
+.cqa-panel #accordion-box article#single-accor {
+    height: 133px;
+    width: 100%;
+    float: left;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent;
+    padding: 33px 0px;
+    border-image: url("img/border-bottom.png") 100% / 2% 0px 0% 100% / 0 stretch;
+    opacity: 1;
+}
+.cqa-panel #accordion-box article#single-accor span {
+}
+.cqa-panel #accordion-box article#single-accor span #ico {
+    height: 24px;
+    width: 24px;
+    float: right;
+    display: inline-block;
+    margin-top: 4px;
+    margin-left: 19.5px;
+}
+.cqa-panel #accordion-box article#single-accor span #ico img {
+    width: 100%;
+}
+.cqa-panel #accordion-box article#single-accor span #acc-title {
+    height: 34px;
+    color: rgb(15, 48, 89);
+    font-family: Rubik;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 34px;
+    text-align: right;
+}
+.cqa-panel #accordion-box article#single-accor span #acc-content {
+    height: 108px;
+    color: rgb(15, 48, 89);
+    font-family: Rubik;
+    font-size: 20px;
+    letter-spacing: 0px;
+    line-height: 36px;
+    text-align: right;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.1s ease 0s, opacity 0.5s linear 0s;
+}
+.cqa-panel.active {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    z-index: 999;
+    width: 100%;
+    display: block;
+}
+.cqa-panel.active #panel-next {
+    display: none;
+}
+.cqa-panel #accordion-box article#single-accor.accActive {
+    height: auto;
+    width: 100%;
+    float: left;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent;
+    padding: 33px 0px 0px;
+    border-image: url("img/border-bottom.png") 100% / 1.5% 0px 0% 100% / 0 stretch;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out 0.4s;
+}
+.cqa-panel.active  #accordion-box {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0.8s ease 0s, opacity 0.8s linear 01s;
+}
+.cqa-panel #accordion-box article#single-accor.accActive span #acc-content {
+    opacity: 1;
+    visibility: visible;
+}
+div#persong-background {
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    left: -30px;
+}
+
+div#persong-background img {
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    float: left;
+}
+
+#right-side div#title {
+    height: 180px;
+    width: 100%;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 80px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 90px;
+    text-align: right;
+    float: right;
+}
+
+#right-side div#title-topper {
+    height: 21px;
+    width: 120px;
+    color: #FFFFFF;
+    font-family: "Almoni Neue DL 4.0 AAA";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 21px;
+    text-align: right;
+    float: right;
+}
+
+#right-side div#title-tab {
+    height: 36px;
+    width: 100%;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 36px;
+    text-align: right;
+    float: right;
+}
+
+div#tab-nav {
+    width: 100%;
+    float: left;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 999999;
+}
+
+div#tab-nav ul {
+    list-style: none;
+    width: 100%;
+    float: left;
+    text-align: right;
+    padding: 0;
+    margin: 53px 0 0 0;
+}
+
+div#tab-nav ul li {
+    height: 34px;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 34px;
+    text-align: revert;
+    margin-top: 24px;
+}
+div#tab-nav ul li.active {
+  height: 36px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 36px;
+  text-decoration: underline;
+}
